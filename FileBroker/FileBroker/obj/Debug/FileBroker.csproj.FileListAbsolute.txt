@@ -1,0 +1,9 @@
+c:\users\kefogle\source\repos\FileBroker\FileBroker\bin\Debug\FileBroker.exe.config
+c:\users\kefogle\source\repos\FileBroker\FileBroker\bin\Debug\FileBroker.exe
+c:\users\kefogle\source\repos\FileBroker\FileBroker\bin\Debug\FileBroker.pdb
+c:\users\kefogle\source\repos\FileBroker\FileBroker\obj\Debug\FileBroker.csproj.CoreCompileInputs.cache
+c:\users\kefogle\source\repos\FileBroker\FileBroker\obj\Debug\FileBroker.exe
+c:\users\kefogle\source\repos\FileBroker\FileBroker\obj\Debug\FileBroker.pdb
+c:\users\kefogle\source\repos\FileBroker\FileBroker\obj\Debug\FileBroker.ProjectInstaller.resources
+c:\users\kefogle\source\repos\FileBroker\FileBroker\obj\Debug\FileBroker.csproj.GenerateResource.cache
+c:\users\kefogle\source\repos\FileBroker\FileBroker\obj\Debug\FileBroker.csprojResolveAssemblyReference.cache
