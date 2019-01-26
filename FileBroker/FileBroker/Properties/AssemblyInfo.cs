@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("FileBroker")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Daimler AG")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("FileBroker")]
-[assembly: AssemblyCopyright("Copyright © Daimler AG 2019")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
