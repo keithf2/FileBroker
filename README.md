@@ -44,3 +44,5 @@ The Commit phase completed successfully.
 The transacted install has completed.
 
 C:\Windows\Microsoft.NET\Framework\v4.0.30319>
+
+From the Control Panel, go to Administrative Tools / Services,   Find the "FileBroker" service, right click, and start.
