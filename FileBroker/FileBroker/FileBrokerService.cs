@@ -29,16 +29,14 @@ namespace FileBroker
             _timer.Elapsed += new ElapsedEventHandler(this.Timer_ElapsedEventHandler);
             _timer.Enabled = true;
             _timer.Start();
-            System.Diagnostics.Trace.WriteLine("Service Started");
-            Trace.Flush();
+            Trace.WriteLine("Service Started");
         }
 
         protected override void OnStop()
         {
             _timer.Enabled = false;
             _timer.Stop();
-            System.Diagnostics.Trace.WriteLine("Service Stopped");
-            Trace.Flush();
+            Trace.WriteLine("Service Stopped");
         }
 
         private void fsWatcher_Changed(object sender, System.IO.FileSystemEventArgs e)
@@ -70,8 +68,7 @@ namespace FileBroker
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Trace.WriteLine("Interval is not configured:" + ex);
-                Trace.Flush();
+                Trace.WriteLine("Interval is not configured:" + ex);
                 _interval = "10000";
             }
             if (_interval != null || _interval.Length >= 0)
@@ -82,14 +79,12 @@ namespace FileBroker
                 }
                 catch (Exception exc)
                 {
-                    System.Diagnostics.Trace.WriteLine("Interval is not configured:" + exc);
-                    Trace.Flush();
+                    Trace.WriteLine("Interval is not configured:" + exc);
                     interval = 10000;
                 }
             }
 
-            System.Diagnostics.Trace.WriteLine("Interval: " + interval.ToString());
-            Trace.Flush();
+            Trace.WriteLine("Interval: " + interval.ToString());
 
             return interval;
         }
@@ -103,7 +98,6 @@ namespace FileBroker
 
             try
             {
-
                 if (filePath != null && filePath.Length > 0 && Directory.Exists(filePath) && filePath2 != null && filePath2.Length > 0 && Directory.Exists(filePath2))
                 {
                     var txtFiles = Directory.EnumerateFiles(filePath);
@@ -112,16 +106,18 @@ namespace FileBroker
                         // wait for file to become available, or 30 seconds, which ever comes first.  
                         WaitForFile(currentFile, 30000);
                         string fileName = currentFile.Substring(filePath.Length);
-                        System.Diagnostics.Trace.WriteLine("FileSystem Watcher Event: Found File:" + currentFile);
-                        Trace.Flush();
+                        Trace.WriteLine("FileSystem Watcher Event: Found File:" + currentFile);
+                        if (File.Exists(Path.Combine(filePath2, fileName)))
+                        {
+                            fileName = Guid.NewGuid().ToString() + "_" + fileName;
+                        }
                         Directory.Move(currentFile, Path.Combine(filePath2, fileName));
                     }
                 }
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Trace.WriteLine("ProcessFiles Exception: " + ex.Message);
-                Trace.Flush();
+                Trace.WriteLine("ProcessFiles Exception: " + ex.Message);
             }
         }
 
